@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="pcsg-generated-ruleset"
+         xmlns="http://pmd.sf.net/ruleset/1.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
+         xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
+
+    <description>SQLDumpParser Standard</description>
+
+    <arg name="colors"/>
+    <arg value="sp"/>
+    <arg name="extensions" value="php,dist,phtml"/>
+    <arg name="report" value="xml"/>
+    <arg name="report-file" value="build/checkstyle.xml"/>
+
+    <config name="testVersion" value="5.3-"/>
+
+    <!-- inherit rules from: -->
+    <rule ref="PSR2"/>
+    <rule ref="Squiz.Commenting">
+        <exclude name="Squiz.Commenting.FileComment.MissingPackageTag"></exclude>
+        <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar"></exclude>
+        <exclude name="Squiz.Commenting.FunctionComment.MissingParamComment"></exclude>
+        <exclude name="Squiz.Commenting.FunctionComment.MissingReturn"></exclude>
+        <exclude name="Squiz.Commenting.FileComment.PackageTagOrder"></exclude>
+        <exclude name="Squiz.Commenting.FileComment.MissingSubpackageTag"></exclude>
+        <exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop"></exclude>
+        <exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParamType"></exclude>
+        <exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParamName"></exclude>
+        <exclude name="Squiz.Commenting.FunctionComment.ParamCommentNotCapital"></exclude>
+        <exclude name="Squiz.Commenting.FunctionComment.ScalarTypeHintMissing"/>
+        <exclude name="Squiz.Commenting.FunctionComment.EmptyThrows"/>
+    </rule>
+
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+    <rule ref="Generic.Formatting.SpaceAfterNot"/>
+    <rule ref="Squiz.WhiteSpace.OperatorSpacing">
+        <properties>
+            <property name="ignoreNewlines" value="true"/>
+        </properties>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
+        <properties>
+            <property name="ignoreBlankLines" value="false"/>
+        </properties>
+    </rule>
+
+    <file>./src</file>
+</ruleset>
