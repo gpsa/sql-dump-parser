@@ -17,10 +17,11 @@ use PHPUnit\Framework\TestCase;
 
 class MySQLTest extends TestCase
 {
-    private $dataSourceFile = __DIR__ . '/data/filetest.sql';
+    private $dataSourceFile;
 
     public function sqlProvider()
     {
+        $this->dataSourceFile = __DIR__ . '/data/filetest.sql';
         $sql = file_get_contents($this->dataSourceFile);
         return [[$sql]];
     }
@@ -100,7 +101,7 @@ SQL;
     public function testInvalidFile()
     {
 
-        (new MySQL)->loadFile('/tmp/test-random-' . bin2hex(random_bytes(10)));
+        (new MySQL)->loadFile('/tmp/test-random-' . \bin2hex(\random_bytes(10)));
     }
 
 }
