@@ -1,6 +1,5 @@
-
 # SQLDumpParser
-
+[![Build Status](https://travis-ci.com/gpsa/sql-dump-parser.svg?branch=master)](https://travis-ci.com/gpsa/sql-dump-parser)
 ## Introduction
 This project aims to help on parsing SQL Dump Files.
 
