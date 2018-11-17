@@ -27,4 +27,4 @@ install:
 # install dependencies using system provided composer binary
 - composer install $flags
 # install dependencies using composer from source
-- bin/composer install $flags
+# - bin/composer install $flags
