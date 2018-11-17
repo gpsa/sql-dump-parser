@@ -101,7 +101,7 @@ SQL;
     public function testInvalidFile()
     {
 
-        (new MySQL)->loadFile('/tmp/test-random-' . \bin2hex(\random_bytes(10)));
+        (new MySQL)->loadFile('/tmp/test-random-' . rand(100000, 9999999));
     }
 
 }
