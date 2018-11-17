@@ -24,7 +24,7 @@ interface PlatformInterface
      * @param  integer $startLine Start from line of file
      * @return static return the class
      */
-    public function loadFile($file, int $startLine = null);
+    public function loadFile($file, $startLine = null);
 
 
     /**
@@ -34,5 +34,5 @@ interface PlatformInterface
      * @param  integer $startLine Start from line of file
      * @return static return the class
      */
-    public function loadString($string, int $startLine = null);
+    public function loadString($string, $startLine = null);
 }//end interface

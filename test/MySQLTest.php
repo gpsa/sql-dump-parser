@@ -19,10 +19,18 @@ class MySQLTest extends TestCase
 {
     private $dataSourceFile;
 
+    protected function getDataSourceFile()
+    {
+        if(!$this->dataSourceFile){
+            $this->dataSourceFile = __DIR__ . '/data/filetest.sql';
+        }
+
+        return $this->dataSourceFile;
+    }
+
     public function sqlProvider()
     {
-        $this->dataSourceFile = __DIR__ . '/data/filetest.sql';
-        $sql = file_get_contents($this->dataSourceFile);
+        $sql = file_get_contents($this->getDataSourceFile());
         return [[$sql]];
     }
 
@@ -67,7 +75,7 @@ SQL;
     public function testLoadFile()
     {
         $parser = new MySQL();
-        $parser->loadFile($this->dataSourceFile);
+        $parser->loadFile($this->getDataSourceFile());
 
         $lineCount = 0;
 
@@ -84,7 +92,7 @@ SQL;
     public function testLoadFileStartLine()
     {
         $parser = new MySQL();
-        $parser->loadFile($this->dataSourceFile, 9);
+        $parser->loadFile($this->getDataSourceFile(), 9);
 
         $lineCount = 0;
 

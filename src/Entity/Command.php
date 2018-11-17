@@ -30,7 +30,7 @@ class Command
      * @param integer $line
      * @param string  $sql
      */
-    public function __construct(int $line, string $sql)
+    public function __construct($line, $sql)
     {
         return $this->setLine($line)->setSql($sql);
     }//end __construct()
@@ -49,7 +49,7 @@ class Command
      * @param integer $line
      * @return Command
      */
-    public function setLine(int $line)
+    public function setLine($line)
     {
         $this->line = $line;
         return $this;
@@ -69,7 +69,7 @@ class Command
      * @param string $sql
      * @return Command
      */
-    public function setSql(string $sql)
+    public function setSql($sql)
     {
         $this->sql = trim($sql);
         return $this;

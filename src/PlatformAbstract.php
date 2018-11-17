@@ -36,7 +36,7 @@ abstract class PlatformAbstract implements PlatformInterface
      * @return $this|PlatformInterface
      * @throws FileHandlerException
      */
-    public function loadFile($file, int $startLine = null)
+    public function loadFile($file, $startLine = null)
     {
         if (($this->handler = @fopen($file, 'r')) === false) {
             throw new FileHandlerException("It's not possible to load file {$file}");
@@ -52,7 +52,7 @@ abstract class PlatformAbstract implements PlatformInterface
      * @return $this|PlatformInterface
      * @throws StringHandlerException
      */
-    public function loadString($string, int $startLine = null)
+    public function loadString($string, $startLine = null)
     {
         if (($this->handler = fopen('php://temp', 'a+')) === false) {
             // @codeCoverageIgnoreStart
@@ -80,7 +80,7 @@ abstract class PlatformAbstract implements PlatformInterface
      * @param integer $startLine
      * @return PlatformAbstract
      */
-    protected function setStartLine(int $startLine = null)
+    protected function setStartLine($startLine = null)
     {
         $this->startLine = $startLine > 0 ? $startLine : 0;
         return $this;
